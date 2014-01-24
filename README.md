@@ -1,4 +1,4 @@
-Socket.IO protocol
+Socket.IO 协议
 ==================
 
 The present document describes the protocol and encoding a client/server pair
@@ -23,17 +23,18 @@ applications and games.
 - Reconnection support with buffering (ideal for mobile devices or bad networks)
 - Lightweight protocol that sits on top of HTTP.
 
-### Anatomy of a Socket.IO socket
+### 关于 Socket.IO socket
 
-A Socket.IO client first decides on a transport to utilize to connect. 
+首先由Socket.IO客户端来决定使用哪一种传输方式来连接。
 
-The state of the Socket.IO socket can be `disconnected`, `disconnecting`,
-`connected` and `connecting`.
+Socket.IO socket的状态有`disconnected`, `disconnecting`,
+`connected` 和 `connecting`.
 
-The transport connection can be `closed`, `closing`, `open`, and `opening`.
 
-A simple HTTP handshake takes place at the beginning of a Socket.IO connection.
-The handshake, if successful, results in the client receiving:
+传输方式（transport）连接（connection）状态有`closed`, `closing`, `open`, 和 `opening`.
+
+通常一个http的握手在Socket.IO连接之前，如果握手成功，结果会在客户端接受。
+
 
 - A session id that will be given for the transport to open connections.
 - A number of seconds within which a heartbeat is expected (`heartbeat
